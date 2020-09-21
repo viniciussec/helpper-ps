@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Cadastro de usuário - PS - Helpper
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <form onsubmit="event.preventDefault();enviar();" autocomplete="off">
+                    <div>
+                        <label>Nome</label>
+                        <input type="text" name="nome" id="nome">
+                    </div>
+                    <div>
+                        <label>Email</label>
+                        <input type="text" name="email" id="email">
+                    </div>
+                    <div>
+                        <label>CPF/CPNJ</label>
+                        <input type="text" name="cpf" id="cpf">
+                    </div>
+                    <div>
+                        <label>Telefone</label>
+                        <input type="text" name="telefone" id="telefone">
+                    </div>
+                    <div>
+                        <label>CEP</label>
+                        <input type="text" name="cep" id="cep">
+                    </div>
+                    <div>
+                        <label>Logradouro</label>
+                        <input type="text" name="logradouro" id="logradouro">
+                    </div>
+                    <div>
+                        <label>Número</label>
+                        <input type="text" name="numero" id="numero">
+                    </div>
+                    <div>
+                        <label>Bairro</label>
+                        <input type="text" name="bairro" id="bairro">
+                    </div>
+                    <div>
+                        <label>Cidade</label>
+                        <input type="text" name="cidade" id="cidade">
+                    </div>
+                    <div>
+                        <label>Estado</label>
+                        <input type="text" name="estado" id="estado">
+                    </div>
+                    <div  class="form-action-buttons">
+                        <input type="submit" value="Enviar">
+                    </div>
+
+                </form>
+            </td>
+            <td>
+                <table class="list" id="employeeList">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>CPF ou CNPJ</th>
+                            <th>Telefone</th>
+                            <th>CEP</th>
+                            <th>Logradouro</th>
+                            <th>Numero</th>
+                            <th>Bairro</th>
+                            <th>Cidade</th>
+                            <th>Estado</th>
+                            <th></th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <script src="script.js"></script>
+</body>
+
+</html>
