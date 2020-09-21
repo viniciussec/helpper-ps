@@ -1,9 +1,14 @@
 let selectedRow = null
 
 function enviar() {
-    let dadosForm = lerDados();
-    inserir(dadosForm);
-    resetar();
+    if (checarInputVazio()) {
+        let dadosForm = lerDados();
+        inserir(dadosForm);
+        resetar();
+    }
+    else {
+        alert("Você não preencheu todos os campos!");
+    }
 }
 
 function lerDados() {
@@ -45,27 +50,30 @@ function inserir(data) {
     cell10 = newRow.insertCell(9);
     cell10.innerHTML = data.estado;
     cell10 = newRow.insertCell(10);
-    cell10.innerHTML = `<a onClick="onDelete(this)">Delete</a>`;
+    cell10.innerHTML = `<a onClick="deletar(this)">Deletar</a>`;
 }
 
 function resetar() {
-    document.getElementById("nome").value = "";
-    document.getElementById("email").value = "";
-    document.getElementById("cpf").value = "";
-    document.getElementById("telefone").value = "";
-    document.getElementById("cep").value = "";
-    document.getElementById("logradouro").value = "";
-    document.getElementById("numero").value = "";
-    document.getElementById("bairro").value = "";
-    document.getElementById("cidade").value = "";
-    document.getElementById("estado").value = "";
+    document.querySelectorAll("input").forEach((i) => {
+        i.value = "";
+    })
     selectedRow = null;
 }
 
-function onDelete(td) {
+function deletar(td) {
     if (confirm('Tem certeza que deseja deletar este elemento?')) {
         row = td.parentElement.parentElement;
         document.getElementById("employeeList").deleteRow(row.rowIndex);
         resetForm();
     }
+}
+
+function checarInputVazio() {
+    let check = true;
+    document.querySelectorAll("input").forEach((i) => {
+        if (i.value == "") {
+            check = false;
+        }
+    })
+    return check;
 }
