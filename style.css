@@ -75,6 +75,12 @@ label.validation-error{
     margin-left: 5px;
 }
 
+.data-space {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
 .hide{
     display:none;
 }

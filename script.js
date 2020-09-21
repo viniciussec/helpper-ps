@@ -54,7 +54,7 @@ function inserir(data) {
 }
 
 function resetar() {
-    document.querySelectorAll("input").forEach((i) => {
+    document.querySelectorAll(".campo").forEach((i) => {
         i.value = "";
     })
     selectedRow = null;
@@ -69,7 +69,7 @@ function deletar(td) {
 }
 
 function checarInputVazio() {
-    let check = true;
+    check = true;
     document.querySelectorAll("input").forEach((i) => {
         if (i.value == "") {
             check = false;
